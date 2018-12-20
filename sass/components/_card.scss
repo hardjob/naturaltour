@@ -4,8 +4,9 @@
   position: relative;
   height: 50rem;
 
+  //Functionality
   &__side{
-    transition: all .8s ease;
+    transition: all .8s ease-out;
     color: white;
     font-size: 2rem;
     position: absolute;
@@ -15,6 +16,7 @@
     height: 100%;
     backface-visibility: hidden;
     border-radius: 3px;
+    overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba($color_black, .15);
 
     &--front{
@@ -48,5 +50,25 @@
   &:hover &__side--back{
     transform: rotateY(360deg);
     z-index: 1;
+  }
+
+  //Front side styling
+  &__picture{
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1{
+      background-image: linear-gradient(to right bottom, $color_primary_light, $color_primary_dark), url('../../img/nat-5.jpg');
+    }
+
+    &--2{
+      background-image: linear-gradient(to right bottom, $color_secondary_light, $color_secondary_dark), url('../../img/nat-5.jpg');
+    }
+
+    &--3{
+      background-image: linear-gradient(to right bottom, $color_tertiary_light, $color_tertiary_dark), url('../../img/nat-5.jpg');
+    }
   }
 }
