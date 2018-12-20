@@ -7,8 +7,6 @@
   //Functionality
   &__side{
     transition: all .8s ease-out;
-    color: white;
-    font-size: 2rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -24,16 +22,17 @@
       z-index: 1;
     }
 
+    //Back color
     &--back{
       transform: rotateY(180deg);
       z-index: 0;
 
       &-1{
-        background-image: linear-gradient(to right bottom, $color_primary_light, $color_primary_dark);
+        background-image: linear-gradient(to right bottom, $color_secondary_light, $color_secondary_dark);
       }
 
       &-2{
-        background-image: linear-gradient(to right bottom, $color_secondary_light, $color_secondary_dark);
+        background-image: linear-gradient(to right bottom, $color_primary_light, $color_primary_dark);
       }
 
       &-3{
@@ -57,18 +56,90 @@
     background-size: cover;
     height: 23rem;
     background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
-    &--1{
-      background-image: linear-gradient(to right bottom, $color_primary_light, $color_primary_dark), url('../../img/nat-5.jpg');
-    }
 
-    &--2{
+    &--1{
       background-image: linear-gradient(to right bottom, $color_secondary_light, $color_secondary_dark), url('../../img/nat-5.jpg');
     }
 
-    &--3{
-      background-image: linear-gradient(to right bottom, $color_tertiary_light, $color_tertiary_dark), url('../../img/nat-5.jpg');
+    &--2{
+      background-image: linear-gradient(to right bottom, $color_primary_light, $color_primary_dark), url('../../img/nat-6.jpg');
     }
+
+    &--3{
+      background-image: linear-gradient(to right bottom, $color_tertiary_light, $color_tertiary_dark), url('../../img/nat-7.jpg');
+    }
+  }
+
+  &__heading{
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color_white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__heading-span{
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1{
+      background-image: linear-gradient(to right bottom, rgba($color_secondary_light, .85), rgba($color_secondary_dark, .85));
+    }
+
+    &--2{
+      background-image: linear-gradient(to right bottom, rgba($color_primary_light, .85), rgba($color_primary_dark, .85));
+    }
+
+    &--3{
+      background-image: linear-gradient(to right bottom, rgba($color_tertiary_light, .85), rgba($color_tertiary_dark, .85));
+    }
+  }
+
+  &__details{
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 2rem auto 0;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child){
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  //Back styling
+  &__cta{
+    margin-top: 12rem;
+    text-align: center;
+  }
+
+  &__price-box{
+    margin-bottom: 6rem;
+    color: $color_white;
+  }
+
+  &__price-only{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value{
+    font-size: 6rem;
+    font-weight: 100;
   }
 }
