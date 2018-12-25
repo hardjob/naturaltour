@@ -7,8 +7,13 @@
                   rgba($color_primary_light, .8),
                   rgba($color_primary_dark, .8)
   ), url("../../img/hero.jpg") top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 78vh, 0 100%);
   position: relative;
+
+  @include respond(tab-port){
+    clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);
+  }
+
 
   &__logo-box{
     position: absolute;
